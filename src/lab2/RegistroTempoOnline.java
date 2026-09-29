@@ -1,3 +1,5 @@
+
+
 package lab2;
 
 public class RegistroTempoOnline {
@@ -5,26 +7,26 @@ public class RegistroTempoOnline {
     private int tempoOnline;
     private int tempoOnlineEsperado;
 
-    public RegistroTempoOnline(String nomeDisciplina){
+    public RegistroTempoOnline(String nomeDisciplina) {
         this.nomeDisciplina = nomeDisciplina;
         this.tempoOnline = 0;
         this.tempoOnlineEsperado = 120;
     }
-    public RegistroTempoOnline(String nomeDisciplina, int tempoOnlineEsperado){
+    public RegistroTempoOnline(String nomeDisciplina, int tempoOnlineEsperado) {
         this.nomeDisciplina = nomeDisciplina;
         this.tempoOnline = 0;
         this.tempoOnlineEsperado = tempoOnlineEsperado;
     }
 
-    public void adicionaTempoOnline(int tempo){
-
+    public void adicionaTempoOnline(int tempo) {
+        this.tempoOnline += tempo;
     }
-    public boolean atingiuMetaTempoOnline(){
-        if()
+    public boolean atingiuMetaTempoOnline() {
+        return this.tempoOnline >= this.tempoOnlineEsperado;
     }
 
     @Override
-    public String toString(){
-
+    public String toString() {
+        return this.nomeDisciplina  + " " + this.tempoOnline + "/" + this.tempoOnlineEsperado;
     }
 }
