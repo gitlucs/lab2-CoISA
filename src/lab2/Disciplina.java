@@ -24,16 +24,26 @@ public class Disciplina {
         this.notas[nota - 1] = valorNota;
     }
 
-    public boolean aprovado(){
+    // criei porquê vi que ia precisar utilizar o mesmo algoritmo de média repetidas vezes
+    public double calculaMedia(){
         double soma = 0;
 
         for(int i = 0; i < this.notas.length ; i ++) {
             soma += this.notas[i];
         }
-        return ((soma / this.notas.length) >= 7.0);
+
+        return (soma / this.notas.length);
     }
 
+    public boolean aprovado(){
+        double media = this.calculaMedia();
+
+        return (media >= 7.0);
+    }
+
+    @Override
     public String toString(){
-        return this.nomeDisciplina + " " + this.horasEstudo + " " + Arrays.toString(this.notas);
+        double media = this.calculaMedia();
+        return this.nomeDisciplina + " " + this.horasEstudo + " " + media + " " + Arrays.toString(this.notas);
     }
 }
