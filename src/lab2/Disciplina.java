@@ -24,7 +24,7 @@ public class Disciplina {
         this.notas[nota - 1] = valorNota;
     }
 
-    // criei porquê vi que ia precisar utilizar o mesmo algoritmo de média repetidas vezes
+    // criei porque vi que ia precisar utilizar o mesmo algoritmo de média repetidas vezes
     public double calculaMedia(){
         double soma = 0;
 
