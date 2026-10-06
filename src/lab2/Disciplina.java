@@ -2,14 +2,21 @@ package lab2;
 
 import java.util.*;
 
+/**
+ * Representação de um estudante, especificamente de computação, matriculado da * UFCG. Todo aluno precisa ter uma matrícula e é identificado unicamente
+ * por esta matrícula.
+ *
+ * @author Lucas Gabriel
+ */
 public class Disciplina {
     private String nomeDisciplina;
     private int horasEstudo;
-    private double[] notas = new double[4];
+    private double[] notas;
 
     public Disciplina(String nomeDisciplina){
         this.nomeDisciplina = nomeDisciplina;
         this.horasEstudo = 0;
+        this.notas = new double[4];
 
         for(int i = 0; i < notas.length; i++){
             this.notas[i] = 0;

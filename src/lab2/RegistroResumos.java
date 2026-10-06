@@ -1,5 +1,11 @@
 package lab2;
 
+/**
+ * Representação de um estudante, especificamente de computação, matriculado da * UFCG. Todo aluno precisa ter uma matrícula e é identificado unicamente
+ * por esta matrícula.
+ *
+ * @author Lucas Gabriel
+ */
 public class RegistroResumos {
     private Resumo[] resumos;
     private int indiceSubstituivel; /* fiz essa variavel para quando encher de resumos, ele lembrar o resumo mais antigo
@@ -28,7 +34,7 @@ public class RegistroResumos {
         String[] resumosFormatado = new String[qntdResumos];
 
         for(int i = 0; i < qntdResumos; i ++){
-            resumosFormatado[i] = this.resumos[i].getTema() + ": " + this.resumos[i].getConteudo();
+            resumosFormatado[i] = this.resumos[i].toString();
         }
         return resumosFormatado;
     }
@@ -44,8 +50,6 @@ public class RegistroResumos {
             }
         }
         return impressao;
-
-
     }
 
     public int conta(){
