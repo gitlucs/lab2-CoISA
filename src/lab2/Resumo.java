@@ -1,8 +1,7 @@
 package lab2;
 
 /**
- * Representação de um estudante, especificamente de computação, matriculado da * UFCG. Todo aluno precisa ter uma matrícula e é identificado unicamente
- * por esta matrícula.
+ * Classe de representação dos Resumos contidos na classe RegistroResumos
  *
  * @author Lucas Gabriel
  */
@@ -11,11 +10,10 @@ public class Resumo {
     private String conteudo;
 
     /**
-     * Constrói um aluno a partir de sua matrícula e nome.
-     * Todo aluno começa com o campo CRA como nulo.
+     * Constrói um resumo a partir de seu tema e conteudo
      *
-     * @param matricula a matrícula do aluno, no formato “0000000000”
-     * @param nome o nome do aluno
+     * @param tema o tema do resumo
+     * @param conteudo o conteudo do resumo
      */
     public Resumo(String tema, String conteudo) {
         this.tema = tema;
@@ -23,34 +21,29 @@ public class Resumo {
     }
 
     /**
-     * Retorna a String que representa o aluno. A representação segue o
-     * formato “MATRICULA - Nome do Aluno”.
+     * Retorna a String do tema do resumo.
      *
-     * @return a representação em String de um aluno.
+     * @return o tema do resumo
      */
-
     public String getTema() {
         return tema;
     }
 
     /**
-     * Retorna a String que representa o aluno. A representação segue o
-     * formato “MATRICULA - Nome do Aluno”.
+     * Retorna a String do conteudo do resumo.
      *
-     * @return a representação em String de um aluno.
+     * @return o conteudo do resumo
      */
-
     public String getConteudo() {
         return conteudo;
     }
+
     /**
      * Retorna a String que representa o aluno. A representação segue o
      * formato “MATRICULA - Nome do Aluno”.
      *
      * @return a representação em String de um aluno.
      */
-
-
     @Override
     public String toString(){
         return this.tema + ": " + this.conteudo;

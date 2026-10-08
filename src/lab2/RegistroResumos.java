@@ -1,5 +1,8 @@
 package lab2;
 
+import java.util.Arrays;
+import java.util.Locale;
+
 /**
  * Representação de um estudante, especificamente de computação, matriculado da * UFCG. Todo aluno precisa ter uma matrícula e é identificado unicamente
  * por esta matrícula.
@@ -70,5 +73,30 @@ public class RegistroResumos {
             }
         }
         return false;
+    }
+
+    public String[] busca(String chaveDeBusca){
+        String[] temas = new String[this.conta()];
+        int inseridos = 0;
+        for(int i = 0 ; i < this.conta(); i++) {
+            String[] conteudos = this.resumos[i].getConteudo().split(" ");
+            for (int j = 0; j < conteudos.length; j++) {
+                if (chaveDeBusca.toLowerCase().equals(conteudos[j].toLowerCase())) {
+                    temas[i] = this.resumos[i].getTema();
+                    inseridos += 1;
+                }
+            }
+        }
+
+        String[] temasEnxuto = new String[inseridos];
+        int indiceApoio = 0;
+        for(int i = 0; i < inseridos; i++){
+            if(temas[i] != null){
+                temasEnxuto[indiceApoio] = temas[i];
+                indiceApoio += 1;
+            }
+        }
+        Arrays.sort(temasEnxuto);
+        return temasEnxuto;
     }
 }
