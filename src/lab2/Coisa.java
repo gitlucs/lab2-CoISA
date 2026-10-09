@@ -2,12 +2,7 @@ package lab2;
 
 import java.util.Arrays;
 
-/**
- * Representação de um estudante, especificamente de computação, matriculado da * UFCG. Todo aluno precisa ter uma matrícula e é identificado unicamente
- * por esta matrícula.
- *
- * @author Lucas Gabriel
- */
+
 public class Coisa {
     public static void main(String[] args) {
         registrarDescanso();

@@ -39,10 +39,10 @@ public class Resumo {
     }
 
     /**
-     * Retorna a String que representa o aluno. A representação segue o
-     * formato “MATRICULA - Nome do Aluno”.
+     * Retorna a String que representa o resumo. A representação segue o
+     * formato “Tema: conteudo do resumo”.
      *
-     * @return a representação em String de um aluno.
+     * @return a representação em String de um resumo.
      */
     @Override
     public String toString(){

@@ -1,24 +1,32 @@
 package lab2;
 
 import java.util.Arrays;
-import java.util.Locale;
 
 /**
- * Representação de um estudante, especificamente de computação, matriculado da * UFCG. Todo aluno precisa ter uma matrícula e é identificado unicamente
- * por esta matrícula.
+ * Local de onde se registra todos os resumos e encapsula todas as operações com resumos.
  *
  * @author Lucas Gabriel
  */
 public class RegistroResumos {
     private Resumo[] resumos;
-    private int indiceSubstituivel; /* fiz essa variavel para quando encher de resumos, ele lembrar o resumo mais antigo
-                                       e substituir, se for adicionado um novo resumo*/
+    private int indiceSubstituivel;
 
+    /**
+     * Constroi o RegistroResumos, inicializa o array onde será armazenado os resumos e o indice que servirá de apontador para o espaço livre
+     *
+     * @param numeroResumos define o tamanho do array de resumos
+     */
     public RegistroResumos(int numeroResumos){
         this.resumos = new Resumo[numeroResumos];
         this.indiceSubstituivel = 0;
     }
 
+    /**
+     * Adiciona resumos que ainda não existem, no array
+     *
+     * @param tema tema do resumo
+     * @param conteudo conteudo do resumo
+     */
     public void adiciona(String tema, String conteudo){
         if (this.temResumo(tema)){
             return;
@@ -32,6 +40,11 @@ public class RegistroResumos {
         }
     }
 
+    /**
+     * Pega todos os resumos existentes e retorna um array de string com os resumos formatados com tema e conteudo
+     * juntos
+     * @return um array de String com todos os resumos
+     */
     public String[] pegaResumos(){
         int qntdResumos = this.conta();
         String[] resumosFormatado = new String[qntdResumos];
@@ -42,6 +55,11 @@ public class RegistroResumos {
         return resumosFormatado;
     }
 
+    /**
+     * Informa a informação do estado atual do registro
+     *
+     * @return Um String com as informações gerais do estado dos registros
+     */
     public String imprimeResumos(){
         int qntdResumos = this.conta();
         String impressao = "- " + qntdResumos + " resumo(s) cadastrado(s)\n-";
@@ -55,6 +73,11 @@ public class RegistroResumos {
         return impressao;
     }
 
+    /**
+     * conta quantos resumos existem no array de resumos
+     *
+     * @return a quantidade de resumos preenchendo o array
+     */
     public int conta(){
         int contagem = 0;
         for(int i = 0; i < this.resumos.length; i ++){
@@ -65,6 +88,13 @@ public class RegistroResumos {
         }
         return contagem;
     }
+
+    /**
+     * Verifica se já existe um resumo com aquele tema e
+     *
+     * @param tema tema do resumo procurado
+     * @return um boolean que diz se há ou não há resumo daquele tema
+     */
     public boolean temResumo(String tema){
         int qntdResumos = this.conta();
         for(int i = 0; i < qntdResumos; i++){
@@ -75,6 +105,12 @@ public class RegistroResumos {
         return false;
     }
 
+    /**
+     * Busca resumos que possuem a palavra chave no seu conteudo
+     *
+     * @param chaveDeBusca palavra chave que sera procurada nos resumos
+     * @return um array de resumos dos temas dos resumos que possuem aquela palavra em seu conteudo
+     */
     public String[] busca(String chaveDeBusca){
         String[] temas = new String[this.conta()];
         int inseridos = 0;
