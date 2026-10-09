@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class RegistroResumos {
     private Resumo[] resumos;
-    private int indiceSubstituivel;
+    private int iResumo;
 
     /**
      * Constroi o RegistroResumos, inicializa o array onde será armazenado os resumos e o indice que servirá de apontador para o espaço livre
@@ -18,7 +18,7 @@ public class RegistroResumos {
      */
     public RegistroResumos(int numeroResumos){
         this.resumos = new Resumo[numeroResumos];
-        this.indiceSubstituivel = 0;
+        this.iResumo = 0;
     }
 
     /**
@@ -31,12 +31,12 @@ public class RegistroResumos {
         if (this.temResumo(tema)){
             return;
         }
-        this.resumos[this.indiceSubstituivel] = new Resumo(tema, conteudo);
+        this.resumos[this.iResumo] = new Resumo(tema, conteudo);
 
-        if (this.indiceSubstituivel == this.resumos.length - 1){
-            indiceSubstituivel = 0;
+        if (this.iResumo == this.resumos.length - 1){
+            iResumo = 0;
         } else {
-            indiceSubstituivel += 1;
+            iResumo += 1;
         }
     }
 
