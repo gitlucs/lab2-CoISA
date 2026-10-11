@@ -55,8 +55,7 @@ RegistroResumos
 ---
 - totalResumos: Resumo[]
 - numeroDeResumos: int
-- quantidadeAtual: int
-- proximaPosicao: int
+- iResumos: int
 ---
 + RegistroResumos(numeroDeResumos: int)
 + adiciona(tema: String, conteudo: String): void
